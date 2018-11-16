@@ -57,7 +57,7 @@ Open up the `Data_Structures_Answers.md` file. This is where you'll jot down you
 ### Algorithms
 
 It is recommended that you allot about 1 and a half hours for this portion of the sprint challenge.
-
+initial commit
 For the algorithms portion of the sprint challenge, you'll be answering questions posed in the `Algorithms_Questions.md` document inside the `algorithms` directory. Write down your answer and also write down a justification for _why_ you put down that answer. This could net you some partial credit if your justification is sound but the answer you put down turns out to not be correct. Add your answers to the questions in the `Algorithms_Answers.md` file.
 
 ### Stretch Problems
