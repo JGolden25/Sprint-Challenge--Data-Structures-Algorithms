@@ -1,15 +1,14 @@
 def heapsort(arr):
  heap = Heap()
-    sorted = []  # items that are removed gets appended here
+       sorted = []  # items that are removed gets appended here
     for i in arr:  # for every item in array, insert it in the heap
         heap.insert(i)
 
     while heap.get_size() > 0:  # if the length of the heap storage is still more than 0
-        sorted.append(  # add the deleted value to sorted so it is accounted for
+       sorted.append(  # add the deleted value to sorted so it is accounted for
             heap.delete()  # method deletes the root and returns the deleted root value
         )
-
-    return sorted[
+return sorted[
         ::-1
     ]  # we needed to reverse here, usually values from least to greatest for a max heap 
  
@@ -38,21 +37,27 @@ class Heap:
   def _bubble_up(self, index):
     while (index - 1) // 2 >= 0:
       if self.storage[(index - 1) // 2] < self.storage[index]:
-        self.storage[index], self.storage[(index - 1) // 2] = self.storage[(index - 1) // 2], self.storage[index]
+        self.storage[index], self.storage[(index - 1) // 2] = (
+        self.storage[(index - 1) // 2], 
+        self.storage[index],
+        )
       index = (index - 1) // 2
 
   def _sift_down(self, index):
     while index * 2 + 1 <= len(self.storage) - 1:
       mc = self._max_child(index)
       if self.storage[index] < self.storage[mc]:
-        self.storage[index], self.storage[mc] = self.storage[mc], self.storage[index]
+        self.storage[index], self.storage[mc] = (
+          self.storage[mc], self.storage[index])
       index = mc
 
   def _max_child(self, index):
     if index * 2 + 2 > len(self.storage) - 1:
       return index * 2 + 1
     else:
-      return index * 2 + 1 
+      return (
+    index * 2 + 1 
       if self.storage[index * 2 + 1] > self.storage[index * 2 + 2] 
-      else index * 2 + 2
+      else index * 2 + 2 
+      )
       

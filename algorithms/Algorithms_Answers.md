@@ -19,3 +19,5 @@ bunnyEars = function(bunnies) {
       if (bunnies == 0) return 0
       return 2 + bunnyEars(bunnies-1) #recursive
     }
+
+2. A Binary Search Tree. I would test the middle floor of the building first. If it breaks, I would move down halfway from the middle floor and ground floor and test it there. At a floor that it doesn't break anymore, I would move up halfway between that floor and the last floor that it broke.
