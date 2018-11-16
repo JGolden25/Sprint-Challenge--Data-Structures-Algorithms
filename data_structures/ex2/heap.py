@@ -1,5 +1,17 @@
 def heapsort(arr):
- pass 
+ heap = Heap()
+    sorted = []  # items that are removed gets appended here
+    for i in arr:  # for every item in array, insert it in the heap
+        heap.insert(i)
+
+    while heap.get_size() > 0:  # if the length of the heap storage is still more than 0
+        sorted.append(  # add the deleted value to sorted so it is accounted for
+            heap.delete()  # method deletes the root and returns the deleted root value
+        )
+
+    return sorted[
+        ::-1
+    ]  # we needed to reverse here, usually values from least to greatest for a max heap 
  
 
 class Heap:
@@ -40,4 +52,7 @@ class Heap:
     if index * 2 + 2 > len(self.storage) - 1:
       return index * 2 + 1
     else:
-      return index * 2 + 1 if self.storage[index * 2 + 1] > self.storage[index * 2 + 2] else index * 2 + 2
+      return index * 2 + 1 
+      if self.storage[index * 2 + 1] > self.storage[index * 2 + 2] 
+      else index * 2 + 2
+      

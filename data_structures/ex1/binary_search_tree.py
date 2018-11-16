@@ -8,7 +8,15 @@ class BinarySearchTree:
     pass    
 
   def breadth_first_for_each(self, cb):
-    pass
+    queue = [self]
+
+    while queue:  # while there's a node in the queue
+            discovered_node = queue.pop(0)
+            if discovered_node.left:  # if there's a left node, add to queue
+                queue.append(discovered_node.left)
+            if discovered_node.right:  # if there's a right node, add to queue
+                queue.append(discovered_node.right)
+            cb(discovered_node.value)  # run the cb on that node
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
